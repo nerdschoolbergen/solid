@@ -44,3 +44,21 @@
 13. In addition to alarms messages, whenever an alarm is raised, it also posts a chuck norris joke from http://www.icndb.com/api/! 
 
 Have fun
+
+## Opening and running the project
+
+#### IntelliJ
+
+1. File -> Open -> Browse to `[REPOSITORY_ROOT]\alarmsystem\` and open `pom.xml`. IntelliJ figures out the rest
+
+To set up Maven build configurations if necessary:
+
+1. Run -> Edit Configurations -> "+" button in upper left corner -> Choose "Maven" in the list.
+2. Name: "Maven Compile" (or whatever you decide)
+3. Command line: "clean compile"
+4. Ok. Make sure you select the "Maven Compile" configuration when you Run the project (Shift+F10)
+
+#### Eclipse
+
+1. File -> Import -> Choose "Maven project" or similar in the list of project types
+2. Click the Browse button and browse to `[REPOSITORY_ROOT]\alarmsystem\`. Eclipse should now automatically list `pom.xml` in the current window. Click Ok until the wizard is completed. 
