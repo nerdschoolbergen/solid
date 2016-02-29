@@ -5,7 +5,7 @@
 - The system should support any number of sensors
 - The system should support different types of sensors
 - The system should poll all sensors to see if any are triggered (an alarm is raised)
-- The system should also check for any defected sensors (different types of sensors has different defect rates)
+- The system should also check for the battery percentage of the sensors (different types of sensors draines faster)
 
 ## The starting point
 
@@ -27,8 +27,10 @@
 
 1. Implement the `FireSensor` methods.
 	- 5% of the time it is called, it raises an alarm
+	- Drains 10% battery between each poll
 2. Implement the `SmokeSensor` methods.
 	- 10% of the time it is called, it raises an alarm
+	- Drains 20% battery between each poll
 3. Investigate the `ControlUnit.pollSensors()` method. What are its current responsibilities? (No need to do anything, just make sure you find all responsibilities before you continue).
 4. Instead of "newing up" sensors when we call `pollSensors()`, we want to pass a collection of sensors in to the ControlUnit somehow. However, we don't want to pass the sensors in when we are polling. When we poll sensors, the control unit should be configured. (Hint: Dependency Inversion Principle).
 5. Investigate the pollSensors method again, same as #4. What are the responsibilities now?
