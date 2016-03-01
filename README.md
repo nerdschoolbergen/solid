@@ -65,5 +65,11 @@ To set up Maven build configurations if necessary:
 
 #### Eclipse
 
-1. File -> Import -> Choose "Maven project" or similar in the list of project types
-2. Click the Browse button and browse to `[REPOSITORY_ROOT]\alarmsystem\`. Eclipse should now automatically list `pom.xml` in the current window. Click Ok until the wizard is completed. 
+1. File -> Import -> 
+2. Choose "Maven" in the list of project types
+3. "Existing Maven Projects"
+4. Click the Browse button and browse to `[REPOSITORY_ROOT]\alarmsystem\`. Eclipse should now automatically list `pom.xml` in the Projects list. 
+5. Click Finish
+6. Go to Run -> Run As -> Maven build
+7. In the Edit Configuration window that pops up, enter "clean compile" as the Goal.
+8. If you get a build error saying something like "No compiler is provided in this environment. Perhaps you are running on a JRE rather than a JDK?", see this solution (or install IntelliJ already!): http://stackoverflow.com/questions/19655184/no-compiler-is-provided-in-this-environment-perhaps-you-are-running-on-a-jre-ra#comment32595387_21279068 
