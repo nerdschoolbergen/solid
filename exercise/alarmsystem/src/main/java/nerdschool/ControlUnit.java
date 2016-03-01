@@ -11,7 +11,9 @@ public class ControlUnit {
 
         for (Sensor sensor : sensors) {
             if (sensor.isTriggered()){
-                System.out.println("A " + sensor.getSensortype() + " sensor was triggered at " + sensor.getLocation());
+                System.out.println("A " + sensor.getSensorType() + " sensor was triggered at " + sensor.getLocation());
+            } else {
+                System.out.println("Polled " + sensor.getSensorType() + " at " + sensor.getLocation() + " successfully");
             }
         }
     }

@@ -9,11 +9,11 @@ public class SmokeSensor implements Sensor {
         return null;
     }
 
-    public String getSensortype() {
+    public String getSensorType() {
         return null;
     }
 
-    public double batteryPercentage() {
+    public double getBatteryPercentage() {
         return -1;
     }
 }
