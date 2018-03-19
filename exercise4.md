@@ -1,4 +1,4 @@
-# 4.0 Exercise 4 - bonus :star:
+# 4.0 - Exercise 4 - bonus :star:
 
 :star: We want to test that an alarm is raised, and also implement different alarm notification methods (For example: automatically call fire department, call owner's phone, and trigger control unit alarm siren). Plan and implement how you can extract the announcement logic and:
   1. Trigger many different announcement strategies
