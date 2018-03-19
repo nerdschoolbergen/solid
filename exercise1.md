@@ -1,6 +1,6 @@
 # Exercise 1
 
-## Case: The Alarm System
+## Case: The Alarm System :rotating_light:
 
 In these exercises we're going to make an Alarmsystem - the kind with fire and smoke detectors etc.
 
