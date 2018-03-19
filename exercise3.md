@@ -1,6 +1,6 @@
-# 3.0 Exercise 3 - extending the alarmsystem
+# 3.0 - Exercise 3 - extending the alarmsystem
 
-## 3.1 Adding motion and heat sensors
+## 3.1 - Adding motion and heat sensors
 
 :book: A new use case! This is no longer a alarm system for only detecting hazards, it should now also include security such as motion and heat sensors. However, these sensors don't run on battery so one of the `Sensor` interface methods is suddenly redundant for a whole set of sensors. 
 
@@ -10,7 +10,7 @@
 
 :pencil2: Create a new `MotionSensor` sensor, which inherits from the `Sensor` interface. These new security sensors should be polled separately from the hazard sensors. This requires a way to distinguish between the two sensor categories. Make changes to the `Sensor` interface to accomodate this.
 
-## 3.2 Adding a time-check rule
+## 3.2 - Adding a time-check rule
 
 :pencil2: Security sensors should only be polled at night between 22:00-06:00. This is the same for all security sensors. Since we don't want to mix security sensor and hazard sensor behaviour in the same polling mechanism, we decide to make use of inheritance and create a new `SecurityControlUnit` which `extends` the existing ControlUnit. Our intention is to pass in the security sensors through the _super (parent) constructor_ and then implement a rule that checks the current time and if it's between 22:00-06:00, we run the `super.pollSensors()` method which already do the heavy lifting for us.
 
@@ -19,7 +19,7 @@
 :pencil2: Create the `SecurityControlUnit` and extend `ControlUnit`
 :pencil2: Implement the time-check rule and poll the sensors.
 
-## 3.3 Testing tips pt. 2
+## 3.3 - Testing tips pt. 2
 
 :book: Another hard thing when testing is date and time. After all, it would be quite bad if our unit tests could only pass between 22:00-06:00 at night for the exercise above.
 
