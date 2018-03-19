@@ -25,3 +25,5 @@ The default implementation (`ConsoleWritingAlarmHandler`? (Just suggestions...))
 sensor logs in a List which you can then read and assert against in your test.
 
 :star: Nobody said ``pollSensors`` has to return void. It's your implementation after all. If you want to return a `Map<string, string>` of sensor id's and sensor alarm messages so that it's easier to test, go for it.
+
+### [Go to exercise 3 :arrow_right:](exercise-3.md)
