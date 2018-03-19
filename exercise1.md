@@ -41,14 +41,15 @@ Requirements:
 
 ### 1.2.4 Existing unit tests
 
-There are some initial unit tests in place: `FireSensorTest.java` and `SmokeSensorTest.java`. These are just dummy implementations to verify our starting template works out of the box as expected.
+:book: There are some initial unit tests in place: `FireSensorTest.java` and `SmokeSensorTest.java`. These are just dummy implementations to verify our starting template works out of the box as expected.
 When you work on your code you should keep the tests green, and that obviously means you will need to change them as you go along. TL;DR - the tests are just placeholders. Write better ones as you go along and remove the placeholder ones.
 
 ## 1.3 `FireSensor`
 
 :pencil2: Implement the `FireSensor` methods.
 
-Requirements:
+
+:exclamation: Requirements:
 
 - 5% of the time it is called, it raises an alarm
 - Drains 10% battery between each poll
@@ -57,7 +58,8 @@ Requirements:
 
 :pencil2: Implement the `SmokeSensor` methods.
 
-Requirements:
+
+:exclamation: Requirements:
 
 - 10% of the time it is called, it raises an alarm
 - Drains 20% battery between each poll
