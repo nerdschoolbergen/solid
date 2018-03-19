@@ -15,9 +15,13 @@ In these exercises we're going to make an Alarmsystem - the kind with fire and s
 
 ## Getting started
 
-1. Either `git clone https://github.com/nerdschoolbergen/solid.git` or "Download as ZIP"
-2. Start IntelliJ and go `File -> Open -> select the POM.xml file in the cloned repository`. If IntelliJ asks, you want to select `Yes` for "Open as Project?" and "Keep existing project" for the second prompt.
-3. You should be able to compile the code and run all the existing unit tests.
+> **Before you begin**: Please make sure that you have the following installed:
+- IntelliJ Community Edition: [IntelliJ Community Edition](https://www.jetbrains.com/idea/download/)
+- Java dev kit: [Java SE Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+
+1. :pencil2: Either `git clone https://github.com/nerdschoolbergen/solid.git` or "Download as ZIP"
+2. :pencil2: Start IntelliJ and go `File -> Open -> select the POM.xml file in the cloned repository`. If IntelliJ asks, you want to select `Yes` for "Open as Project?" and "Keep existing project" for the second prompt.
+3. :pencil2: You should be able to compile the code and run all the existing unit tests.
 
 ### Existing code
 
@@ -42,9 +46,9 @@ When you work on your code you should keep the tests green, and that obviously m
 
 ## Exercises
 
-1. Implement the `FireSensor` methods.
+1. :pencil2: Implement the `FireSensor` methods.
 	- 5% of the time it is called, it raises an alarm
 	- Drains 10% battery between each poll
-2. Implement the `SmokeSensor` methods.
+2. :pencil2: Implement the `SmokeSensor` methods.
 	- 10% of the time it is called, it raises an alarm
 	- Drains 20% battery between each poll
