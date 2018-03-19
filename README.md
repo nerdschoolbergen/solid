@@ -27,3 +27,6 @@ This repository contains a set of exercises organized in markdown files. Each ex
 ## Helpful resources
 - [SOLID (object-oriented design) on Wikipedia](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design))
 - [SOLID motivational posters](https://uppalaayush.wordpress.com/2015/09/14/solid-object-oriented-design-principles-summed-up-in-memes/)
+- [IntelliJ video tutorials](https://www.jetbrains.com/idea/documentation/)
+- [IntelliJ for Eclipse users](https://www.jetbrains.com/help/idea/2016.3/eclipse.html)
+- [IntelliJ testing](https://www.jetbrains.com/help/idea/2016.3/testing.html)
