@@ -1,10 +1,10 @@
-# Exercise 1
-
-## Case: The Alarm System :rotating_light:
+# Exercise 1 - Introduction
 
 In these exercises we're going to make an Alarmsystem - the kind with fire and smoke detectors etc.
 
-## Use cases
+## The Alarm System :rotating_light:
+
+Requirements:
 
 - The system should support any number of sensors
 - The system should support different types of sensors (fire, smoke, gas, etc)
