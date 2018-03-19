@@ -1,6 +1,6 @@
 # 1.0 Exercise 1 - Introduction
 
-In these exercises we're going to make an Alarmsystem - the kind with fire and smoke detectors etc.
+In these exercises we're going to make an Alarmsystem - the kind with fire and smoke detectors.
 
 ## 1.1 The Alarm System :rotating_light:
 
