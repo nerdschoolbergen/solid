@@ -1,8 +1,8 @@
-# 1.0 Exercise 1 - Introduction
+# 1.0 - Exercise 1 - Introduction
 
 In these exercises we're going to make an Alarmsystem - the kind with fire and smoke detectors.
 
-## 1.1 The Alarm System :rotating_light:
+## 1.1 - The Alarm System :rotating_light:
 
 Requirements:
 
@@ -13,7 +13,7 @@ Requirements:
 
 > Important! The goal of these exercises is to work on code with the SOLID principles in mind. Try to evaluate your choices as you go and keep the principles in mind.
 
-## 1.2 Getting started
+## 1.2 - Getting started
 
 > **Before you begin**: Please make sure that you have the following installed:
 - IntelliJ Community Edition: [IntelliJ Community Edition](https://www.jetbrains.com/idea/download/)
@@ -39,12 +39,12 @@ Requirements:
 - `SmokeSensor`. This sensor implements the `Sensor` interface but has no logic yet.
 - `ControlUnit`. This is the starting point for the alarmsystem. It's the main entry point for polling sensors and controlling the system.
 
-### 1.2.4 Existing unit tests
+### 1.2.4 - Existing unit tests
 
 :book: There are some initial unit tests in place: `FireSensorTest.java` and `SmokeSensorTest.java`. These are just dummy implementations to verify our starting template works out of the box as expected.
 When you work on your code you should keep the tests green, and that obviously means you will need to change them as you go along. TL;DR - the tests are just placeholders. Write better ones as you go along and remove the placeholder ones.
 
-## 1.3 `FireSensor`
+## 1.3 - `FireSensor`
 
 :pencil2: Implement the `FireSensor` methods.
 
@@ -54,7 +54,7 @@ When you work on your code you should keep the tests green, and that obviously m
 - 5% of the time it is called, it raises an alarm
 - Drains 10% battery between each poll
 
-## 1.4. `SmokeSensor`
+## 1.4. - `SmokeSensor`
 
 :pencil2: Implement the `SmokeSensor` methods.
 
