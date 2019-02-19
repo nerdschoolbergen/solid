@@ -2,7 +2,7 @@
 
 Learn about the SOLID principles of object oriented design.
 
-## [Open presentation slides](https://docs.google.com/presentation/d/1MOcdUUTNhTJ_2RmqoEv0wfMGB-Dz-zdd91zPBDXVsWk/edit?usp=sharing)
+## [Open presentation slides](https://docs.google.com/presentation/d/1di0rLF-Y_CRe058cbUZJHlmY2_jeTIwoP2RTqPdN7J0/edit?usp=sharing)
 
 ## Focus of this lesson
 This lesson will focus on writing code that touches upon the various aspects of the SOLID principles.
