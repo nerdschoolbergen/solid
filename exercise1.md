@@ -51,7 +51,7 @@ When you work on your code you should keep the tests green, and that obviously m
 
 :exclamation: Requirements:
 
-- 5% of the time it is called, it raises an alarm
+- Should raise an alarm every third time it is polled
 - Drains 10% battery between each poll
 
 ## 1.4. - `SmokeSensor`
@@ -61,7 +61,7 @@ When you work on your code you should keep the tests green, and that obviously m
 
 :exclamation: Requirements:
 
-- 10% of the time it is called, it raises an alarm
+- Should raise an alarm every second time it is polled
 - Drains 20% battery between each poll
 
 ### [Go to exercise 2 :arrow_right:](exercise2.md)
