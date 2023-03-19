@@ -9,12 +9,7 @@ public class SmokeSensor implements Sensor {
     batteryPercentage -= 20;
 
     nrOfIsTriggeredCalls++;
-    if (nrOfIsTriggeredCalls % triggerFrequency == 0) {
-      nrOfIsTriggeredCalls = 0;
-      return true;
-    }
-
-    return false;
+    return (nrOfIsTriggeredCalls % triggerFrequency == 0);
   }
 
   public String getLocation() {
