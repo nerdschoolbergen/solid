@@ -13,7 +13,11 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Build with Maven
+      - name: Build exercise project with Maven
         working-directory: ./alarmsystem
+        run:
+          mvn --batch-mode --update-snapshots package
+      - name: Build solution project with Maven
+        working-directory: ./solution
         run:
           mvn --batch-mode --update-snapshots package
