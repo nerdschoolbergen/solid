@@ -28,14 +28,9 @@ public class FireSensorTest {
       }
     }
 
-    final int allowedOffset = 2;
-    final int expectedPercentage = 10;
-
     float triggeredPercentage =  triggeredCount / nrOfPolls * 100;
-    int maxAllowedOffset = expectedPercentage + allowedOffset;
-    int minAllowedOffset = expectedPercentage - allowedOffset;
-
-    assertTrue(triggeredPercentage >= minAllowedOffset && triggeredPercentage <= maxAllowedOffset );
+    double expectedTriggerPercentage = 33.0;
+    assertEquals(expectedTriggerPercentage, triggeredPercentage );
   }
 
   @Test
