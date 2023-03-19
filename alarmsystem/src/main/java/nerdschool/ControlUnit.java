@@ -6,7 +6,7 @@ import java.util.List;
 public class ControlUnit {
 
   public void pollSensors() {
-    List<Sensor> sensors = new ArrayList<Sensor>();
+    List<Sensor> sensors = new ArrayList<>();
     sensors.add(new FireSensor());
     sensors.add(new SmokeSensor());
 

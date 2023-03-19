@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 public class ControlUnitTest {
 
   @Test
-  void addition() {
+  void testThatPollSensorsPollsAllSensors() {
     // Test code here
   }
 }
