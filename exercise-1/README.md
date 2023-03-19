@@ -39,6 +39,48 @@ Requirements:
 - `FireSensor`. This sensor implements the `Sensor` interface but has no logic yet.
 - `SmokeSensor`. This sensor implements the `Sensor` interface but has no logic yet.
 - `ControlUnit`. This is the starting point for the alarmsystem. It's the main entry point for polling sensors and controlling the system.
+- `App` - Entrypoint for the application (where `main` method is located). Calls `pollSensors()` method in `ControlUnit` class.
+
+```mermaid
+---
+title: Nerdschool Alarmsystem
+---
+classDiagram
+    Sensor <|-- FireSensor
+    Sensor <|-- SmokeSensor
+    ControlUnit <.. App
+    FireSensor <.. ControlUnit
+    SmokeSensor <.. ControlUnit
+
+    class Sensor
+    <<interface>> Sensor
+    Sensor: +isTriggered() bool
+    Sensor: +getLocation() String
+    Sensor: +getSensorType() String
+    Sensor: +getBatteryPercentage() double
+    
+    class FireSensor{
+      +isTriggered() bool
+      +getLocation() String
+      +getSensorType() String
+      +getBatteryPercentage() double
+    }
+    
+    class SmokeSensor{
+      +isTriggered() bool
+      +getLocation() String
+      +getSensorType() String
+      +getBatteryPercentage() double
+    }
+    
+    class ControlUnit{
+      +pollSensors()
+    }
+
+    class App{
+      +main()
+    }
+```
 
 ### 1.2.4 - Existing unit tests
 
