@@ -33,4 +33,4 @@
 
 :pencil2:. In your test you can now substitute your own fake implementation of the adapter interface and return any date and time you want, thus controlling your test.
 
-### [Go to exercise 4 :arrow_right:](exercise4.md)
+### [Go to exercise 4 :arrow_right:](../exercise-4/README.md)
