@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class App {
 
   public static void main(String[] args) {
-    ControlUnit controlUnit = new ControlUnit();
+    FireSensor fireSensor = new FireSensor();
+    SmokeSensor smokeSensor = new SmokeSensor();
+    ControlUnit controlUnit = new ControlUnit(fireSensor, smokeSensor);
 
     Scanner scanner = new Scanner(System.in);
     String input = "";
