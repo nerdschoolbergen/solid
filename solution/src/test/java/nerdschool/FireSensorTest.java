@@ -2,7 +2,6 @@ package nerdschool;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +15,7 @@ public class FireSensorTest {
   }
 
   @Test
-  public void testThatIsTriggeredReturnsTrueAbout10PercentOfTheTime() {
+  public void testThatIsTriggeredReturnsTrue33PercentOfTheTime() {
     FireSensor sensor = new FireSensor();
 
     final float nrOfPolls = 100;
