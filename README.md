@@ -15,7 +15,7 @@ This lesson will focus on writing code that touches upon the various aspects of 
 
 ## Prerequisites
 
-- Some previous experience with any object-orientet programming language is helpful
+- Some previous experience with any object-oriented programming language is helpful
 
 ## How to get started
 
