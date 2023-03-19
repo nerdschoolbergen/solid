@@ -1,4 +1,4 @@
-# Source: https://gist.github.com/rflpazini/14d757a6ebdc3a5549e7c5bf6d7569e1
+# https://google.github.io/styleguide/javaguide.html
 
 [*]
 charset = utf-8
@@ -7,7 +7,6 @@ indent_size = 2
 indent_style = space
 insert_final_newline = false
 max_line_length = 100
-tab_width = 2
 ij_continuation_indent_size = 4
 ij_formatter_off_tag = @formatter:off
 ij_formatter_on_tag = @formatter:on
@@ -118,7 +117,7 @@ ij_java_for_statement_wrap = normal
 ij_java_generate_final_locals = false
 ij_java_generate_final_parameters = false
 ij_java_if_brace_force = always
-ij_java_imports_layout = $*,|,*
+ij_java_imports_layout = $*, |, *
 ij_java_indent_case_from_switch = true
 ij_java_insert_inner_class_imports = true
 ij_java_insert_override_annotation = true
