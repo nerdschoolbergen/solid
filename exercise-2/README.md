@@ -24,9 +24,53 @@ classDiagram
 
 :exclamation: We want to apply the _Dependency Inversion Principle (DIP)_ in order to make the `ControlUnit` oblivious to which type of sensor it administers.
 
-When we introduce this kind of [loose coupling](https://en.wikipedia.org/wiki/Loose_coupling), the ControlUnit class is not prone to change as the Sensor class changes. E.g. We can add new sensor types without changing the ControlUnit class. As long as the different types of sensors adhere to the interface of how a sensor should behave. The ControlUnit class no longer has a direct dependency to the different sensor types, instead it only knows the behaviour of a sensor.
+:book: When we introduce this kind of [loose coupling](https://en.wikipedia.org/wiki/Loose_coupling), the `ControlUnit` class is not prone to change as the Sensor class changes. E.g. we can add new sensor types without changing the `ControlUnit` class. As long as the different types of sensors adhere to the interface of how a sensor should behave. The ControlUnit class no longer has a direct dependency to the different sensor types, instead it only knows the behaviour of a sensor.
 
- :pencil2: Investigate the `ControlUnit.pollSensors()` method. What are its current responsibilities? (No need to do anything, just make sure you find all responsibilities before you continue). Ask an instructor if you're not sure.
+:pencil2: A common way to implement DIP is via _constructor injection_. Create a new constructor for the `ControlUnit` class that takes a list of `Sensor`s as a parameter. Store the list of sensors as a private instance variable inside the class.
+
+:pencil2: Change the `pollSensors` method to loop over the new list of sensors. Remove the `new` statements.
+
+:pencil2: In the `App` class, create instances of each sensors and pass them to the `ControlUnit` class constructor (`ControlUnit(sensor1, sensor2)`).
+
+:bulb: Example:
+
+<details>
+
+```java
+
+public class ControlUnit {
+  private final List<Sensor> sensors;
+
+  public ControlUnit(Sensor... sensors) {
+    this.sensors = Arrays.stream(sensors).toList();
+  }
+
+  public List<Sensor> pollSensors() {
+    // Remove the following:
+    // List<Sensor> sensors = new ArrayList<>();
+    // sensors.add(new FireSensor());
+    // sensors.add(new SmokeSensor()); 
+    // 
+    // ...
+  }
+  // ...
+}
+```
+
+```java
+public class App {
+
+  public static void main(String[] args) {
+    FireSensor fireSensor = new FireSensor();
+    SmokeSensor smokeSensor = new SmokeSensor();
+    ControlUnit controlUnit = new ControlUnit(fireSensor, smokeSensor);
+
+    // ...
+  }
+}
+```
+
+</details>
 
 ## 2.2 - Inversion of Control Principle (IoCP)
 
