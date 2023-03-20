@@ -11,8 +11,8 @@ This lesson will focus on writing code that touches upon the various aspects of 
 ## What you need
 
 - IntelliJ Community Edition: [IntelliJ Community Edition](https://www.jetbrains.com/idea/download/)
-- Java dev kit: [Java SE Development Kit](https://docs.oracle.com/en/java/javase/19/install/overview-jdk-installation.html)
-- Alternative dev kit: [Eclipse Temurin Java Development Kit](https://adoptium.net/)
+- Java dev kit (Java 17 or later): [Java SE Development Kit](https://docs.oracle.com/en/java/javase/19/install/overview-jdk-installation.html)
+- Alternative dev kit (Java 17 or later): [Eclipse Temurin Java Development Kit](https://adoptium.net/)
 
 ## Prerequisites
 
