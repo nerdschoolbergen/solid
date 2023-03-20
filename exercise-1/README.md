@@ -114,6 +114,14 @@ classDiagram
 - Should raise an alarm every third time it is polled
 - Drains 10% battery between each poll
 
+:bulb: Hints:
+<details>
+- Add backing fields for all the get methods
+- Add a separate backing field for tracking number of polls
+- Increment this number each time the isTriggered method is called
+- To implement the trigger logic, use the modulo operator in combination with the tigger count field
+</details>
+
 ## 1.4. - `SmokeSensor`
 
 :pencil2: Implement the `SmokeSensor` methods.
