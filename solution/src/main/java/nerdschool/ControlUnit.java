@@ -5,26 +5,22 @@ import java.util.List;
 
 public class ControlUnit {
   private final List<Sensor> sensors;
-  public ControlUnit(List<Sensor> sensors) {
+  private SensorWriter sensorWriter;
+
+  public ControlUnit(List<Sensor> sensors, SensorWriter sensorWriter) {
     this.sensors = sensors;
+    this.sensorWriter = sensorWriter;
   }
 
-  public List<Sensor> pollSensors() {
-
+  public void pollSensors() {
     List<Sensor> triggeredSensors = new ArrayList<>();
 
     for (Sensor sensor : sensors) {
       if (sensor.isTriggered()) {
-        System.out.println(
-            "A " + sensor.getSensorType() + " sensor was triggered at "
-                + sensor.getLocation());
-      } else {
-        System.out.println(
-            "Polled " + sensor.getSensorType() + " at " + sensor.getLocation()
-                + " successfully");
+        triggeredSensors.add(sensor);
       }
     }
 
-    return triggeredSensors;
+    this.sensorWriter.WriteSensorStatus(triggeredSensors);
   }
 }

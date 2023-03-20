@@ -10,15 +10,19 @@ public class ControlUnit {
     sensors.add(new FireSensor());
     sensors.add(new SmokeSensor());
 
+    List<Sensor> triggeredSensors = new ArrayList<>();
+
     for (Sensor sensor : sensors) {
       if (sensor.isTriggered()) {
-        System.out.println(
-            "A " + sensor.getSensorType() + " sensor was triggered at "
-                + sensor.getLocation());
-      } else {
-        System.out.println(
-            "Polled " + sensor.getSensorType() + " at " + sensor.getLocation()
-                + " successfully");
+        triggeredSensors.add(sensor);
+      }
+    }
+
+    if (triggeredSensors.isEmpty()) {
+      System.out.println("No sensors were triggered");
+    } else {
+      for (Sensor sensor: triggeredSensors) {
+        System.out.printf("A %s sensor was triggered at %s%n", sensor.getSensorType(), sensor.getLocation());
       }
     }
   }
