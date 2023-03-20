@@ -27,9 +27,9 @@ public class FireSensorTest {
       }
     }
 
-    float triggeredPercentage =  triggeredCount / nrOfPolls * 100;
+    float triggeredPercentage = triggeredCount / nrOfPolls * 100;
     double expectedTriggerPercentage = 33.0;
-    assertEquals(expectedTriggerPercentage, triggeredPercentage );
+    assertEquals(expectedTriggerPercentage, triggeredPercentage);
   }
 
   @Test
@@ -54,7 +54,7 @@ public class FireSensorTest {
   }
 
   @Test
-  public void testThatGetBatteryPercentageDrains10PercentBetweenEachPoll(){
+  public void testThatGetBatteryPercentageDrains10PercentBetweenEachPoll() {
     FireSensor sensor = new FireSensor();
 
     double batteryPercentage1 = sensor.getBatteryPercentage();

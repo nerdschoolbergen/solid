@@ -1,9 +1,9 @@
 package nerdschool;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-
-import org.junit.jupiter.api.Test;
 
 public class SmokeSensorTest {
 
@@ -27,9 +27,9 @@ public class SmokeSensorTest {
       }
     }
 
-    float triggeredPercentage =  triggeredCount / nrOfPolls * 100;
+    float triggeredPercentage = triggeredCount / nrOfPolls * 100;
     double expectedTriggerPercentage = 50.0;
-    assertEquals(expectedTriggerPercentage, triggeredPercentage );
+    assertEquals(expectedTriggerPercentage, triggeredPercentage);
   }
 
   @Test
@@ -55,7 +55,7 @@ public class SmokeSensorTest {
 
 
   @Test
-  public void testThatGetBatteryPercentageDrains10PercentBetweenEachPoll(){
+  public void testThatGetBatteryPercentageDrains10PercentBetweenEachPoll() {
     FireSensor sensor = new FireSensor();
 
     double batteryPercentage1 = sensor.getBatteryPercentage();

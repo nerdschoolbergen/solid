@@ -1,6 +1,7 @@
 package nerdschool;
 
 public class SmokeSensor implements Sensor {
+
   private static final int triggerFrequency = 2;
   private int nrOfIsTriggeredCalls = 0;
   private int batteryPercentage = 100;

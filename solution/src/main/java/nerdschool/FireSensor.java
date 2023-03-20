@@ -1,6 +1,7 @@
 package nerdschool;
 
 public class FireSensor implements Sensor {
+
   private static final int triggerFrequency = 3;
   private int nrOfIsTriggeredCalls = 0;
   private int batteryPercentage = 100;
