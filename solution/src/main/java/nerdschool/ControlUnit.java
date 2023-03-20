@@ -6,8 +6,8 @@ public class ControlUnit {
   private final SensorViewer sensorViewer;
   private final SensorPoller sensorPoller;
 
-  public ControlUnit(SensorViewer statusWriter, SensorPoller sensorPoller) {
-    this.sensorViewer = statusWriter;
+  public ControlUnit(SensorViewer sensorViewer, SensorPoller sensorPoller) {
+    this.sensorViewer = sensorViewer;
     this.sensorPoller = sensorPoller;
   }
 

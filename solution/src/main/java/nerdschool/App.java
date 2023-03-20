@@ -12,8 +12,10 @@ public class App {
     sensors.add(new FireSensor());
     sensors.add(new SmokeSensor());
 
-    SensorWriter sensorWriter = new ConsoleSensorWriter();
-    ControlUnit controlUnit = new ControlUnit(sensors, sensorWriter);
+    SensorViewer sensorViewer = new ConsoleSensorViewer();
+    SensorPoller sensorPoller = new FakeSensorPoller(sensors);
+
+    ControlUnit controlUnit = new ControlUnit(sensorViewer, sensorPoller);
 
     Scanner scanner = new Scanner(System.in);
     String input = "";
