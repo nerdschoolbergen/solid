@@ -30,7 +30,7 @@ classDiagram
 
 :pencil2: Change the `pollSensors` method to loop over the new list of sensors. Remove the `new` statements.
 
-:pencil2: In the `App` class, create instances of each sensors and pass them to the `ControlUnit` class constructor (`ControlUnit(sensor1, sensor2)`).
+:pencil2: In the `App` class, a list of sensor implementations and pass them to the `ControlUnit` class constructor.
 
 :bulb: Example:
 
@@ -41,8 +41,8 @@ classDiagram
 public class ControlUnit {
   private final List<Sensor> sensors;
 
-  public ControlUnit(Sensor... sensors) {
-    this.sensors = Arrays.stream(sensors).toList();
+  public ControlUnit(List<Sensor> sensors) {
+    this.sensors = sensors;
   }
 
   public List<Sensor> pollSensors() {
@@ -61,10 +61,11 @@ public class ControlUnit {
 public class App {
 
   public static void main(String[] args) {
-    FireSensor fireSensor = new FireSensor();
-    SmokeSensor smokeSensor = new SmokeSensor();
-    ControlUnit controlUnit = new ControlUnit(fireSensor, smokeSensor);
-
+    List<Sensor> sensors = new ArrayList<>();
+    sensors.add(new FireSensor());
+    sensors.add(new SmokeSensor());
+    
+    ControlUnit controlUnit = new ControlUnit(sensors);
     // ...
   }
 }

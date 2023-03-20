@@ -1,13 +1,18 @@
 package nerdschool;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
 
   public static void main(String[] args) {
-    FireSensor fireSensor = new FireSensor();
-    SmokeSensor smokeSensor = new SmokeSensor();
-    ControlUnit controlUnit = new ControlUnit(fireSensor, smokeSensor);
+
+    List<Sensor> sensors = new ArrayList<>();
+    sensors.add(new FireSensor());
+    sensors.add(new SmokeSensor());
+
+    ControlUnit controlUnit = new ControlUnit(sensors);
 
     Scanner scanner = new Scanner(System.in);
     String input = "";
