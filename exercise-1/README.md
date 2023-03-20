@@ -87,11 +87,11 @@ classDiagram
 
 :book: The `App` class contains the `main` method for the application. The application will prompt the user to input either "poll" (which calls `pollSensors()` on the `ControlUnit` class) or "exit" (which exits the application).
 
-:pencil2: In order to start the application, Open upp the `App` class in the `Project` view on the left side of the screen. Then click the green arrow button at the top right of the screen or press <kbd>Shift</kbd> + <kbd>F10</kbd> (Windows) or <kbd>^</kbd> + <kbd>R</kbd> (macOS).
+:pencil2: In order to start the application, Open upp the `App` class in the `Project` view on the left side of the screen. Then click the green arrow button at the top right of the screen or press <kbd>Shift</kbd> + <kbd>F10</kbd> (Windows) or <kbd>⌃ Control</kbd> + <kbd>R</kbd> (macOS).
 
 :pencil2: To interact with the application, click on the terminal window in the `Run` window at the bottom of the screen.
 
-:pencil2: Stop the app by pressing the red square button at the top right of the screen or press <kbd>CTRL</kbd> + <kbd>F2</kbd> (Windows) or <kbd>⌘</kbd> + <kbd>F2</kbd> (macOS).
+:pencil2: Stop the app by pressing the red square button at the top right of the screen or press <kbd>CTRL</kbd> + <kbd>F2</kbd> (Windows) or <kbd>⌘ Command</kbd> + <kbd>F2</kbd> (macOS).
 
 ### 1.2.5 - :star: Optional - Unit tests
 
