@@ -114,12 +114,47 @@ classDiagram
 - Should raise an alarm every third time it is polled
 - Drains 10% battery between each poll
 
-:bulb: Hints:
+:bulb: Hints on how to implement the sensor interface:
 <details>
-- Add backing fields for all the get methods
+
+- Add instance variables for all the get methods
 - Add a separate backing field for tracking number of polls
 - Increment this number each time the isTriggered method is called
 - To implement the trigger logic, use the modulo operator in combination with the tigger count field
+</details>
+
+:bulb: Example sensor implementation:
+<details>
+
+```java
+package nerdschool;
+
+public class NoobSensor implements Sensor {
+  private static final int triggerFrequency = 5;
+  private int nrOfIsTriggeredCalls = 0;
+  private int batteryPercentage = 100;
+
+  public boolean isTriggered() {
+    batteryPercentage -= 5;
+
+    nrOfIsTriggeredCalls++;
+    return (nrOfIsTriggeredCalls % triggerFrequency == 0);
+  }
+
+  public String getLocation() {
+    return "Nerdschool HQ";
+  }
+
+  public String getSensorType() {
+    return "Noob";
+  }
+
+  public double getBatteryPercentage() {
+    return batteryPercentage;
+  }
+}
+```
+
 </details>
 
 ## 1.4. - `SmokeSensor`
