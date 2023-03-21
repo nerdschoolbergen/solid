@@ -112,6 +112,6 @@ public class App {
 
 - The `ControlUnit` class violates the Dependency Inversion Principle.
 - By introducting constructor injection the `ControlUnit` now depends on an abstraction (the `Sensor` interface) instead of concretions (`FireSensor` and `SmokeSensor`), thereby adhering to the Dependency Inversion Principle.
-- By making the `ControlUnit` not depend directly on sensors the `ControlUnit` now is also adhering to the Open Closed Principle.
+- By making the `ControlUnit` not depend directly on sensors the `ControlUnit` now is also adhering to the Open Closed Principle, because we can add new Sensors to poll without changing the `ControlUnit` class.
 
 ### [Go to exercise 3 :arrow_right:](../exercise-3/README.md)
