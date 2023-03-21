@@ -5,14 +5,18 @@ import java.util.List;
 
 public class ControlUnit {
 
-  public void pollSensors() {
-    List<Sensor> sensors = new ArrayList<>();
+  private final ArrayList<Sensor> sensors;
+
+  public ControlUnit() {
+    this.sensors = new ArrayList<>();
     sensors.add(new FireSensor());
     sensors.add(new SmokeSensor());
+  }
 
+  public void pollSensors() {
     List<Sensor> triggeredSensors = new ArrayList<>();
 
-    for (Sensor sensor : triggeredSensors) {
+    for (Sensor sensor : sensors) {
       if (sensor.isTriggered()) {
         triggeredSensors.add(sensor);
       }
