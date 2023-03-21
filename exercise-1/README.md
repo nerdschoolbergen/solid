@@ -2,7 +2,7 @@
 
 In these exercises we're going to make an Alarmsystem - the kind with fire and smoke detectors.
 
-## 1.1 - The Alarm System :rotating_light:
+## 1.1 - :rotating_light: The Alarm System
 
 Requirements:
 
@@ -30,10 +30,10 @@ Requirements:
 #### Interfaces
 
 - `Sensor`. This interface defines methods for all sensors to implement.
-	- `isTriggered()`: returns true/false for whether the sensor is triggered or not. Different sensors has different rules. See exercises.
-	- `getLocation()`: returns a description of the location of the sensor such as "Lobby 1st floor" or "In the auditorium".
-	- `getSensortype()`: returns a textual description of the sensor type such as "Fire sensor" or "Smoke sensor".
-	- `getBatteryPercentage()`: Returns a number between 0-100 where 0 is empty and 100 is fully charged.
+  - `isTriggered()`: returns true/false for whether the sensor is triggered or not. Different sensors has different rules. See exercises.
+  - `getLocation()`: returns a description of the location of the sensor such as "Lobby 1st floor" or "In the auditorium".
+  - `getSensortype()`: returns a textual description of the sensor type such as "Fire sensor" or "Smoke sensor".
+  - `getBatteryPercentage()`: Returns a number between 0-100 where 0 is empty and 100 is fully charged.
 
 #### Classes
 
@@ -115,6 +115,7 @@ classDiagram
 - Add a separate backing field for tracking number of polls
 - Increment this number each time the isTriggered method is called
 - To implement the trigger logic, use the modulo operator in combination with the tigger count field
+
 </details>
 
 :bulb: Example sensor implementation:

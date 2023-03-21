@@ -1,12 +1,91 @@
-# 4.0 - Exercise 4 - extending the alarmsystem
+# 4.0 - Exercise 4 - Interface Segregation Principiple (ISP)
 
 ## 4.1 - Adding motion and heat sensors
 
-:book: A new use case! This is no longer a alarm system for only detecting hazards, it should now also include security such as motion and heat sensors. However, these sensors don't run on battery so one of the `Sensor` interface methods is suddenly redundant for a whole set of sensors. 
+```mermaid
+classDiagram
+    Sensor <|-- MotionSensor
+    Sensor <|-- HeatSensor
 
-:question: Which method is this and what SOLID principle does this break?
+    class Sensor
+    <<interface>> Sensor
+    Sensor: +isTriggered() bool
+    Sensor: +getLocation() String
+    Sensor: +getSensorType() String
+    Sensor: +getBatteryPercentage() double
+    
+    class MotionSensor{
+      +isTriggered() bool
+      +getLocation() String
+      +getSensorType() String
+      +getBatteryPercentage() double
+    }
+    
+    class HeatSensor{
+      +isTriggered() bool
+      +getLocation() String
+      +getSensorType() String
+      +getBatteryPercentage() double
+    }    
+```
 
-:pencil2: Following the principle you figured out in the last question, start splitting the current `Sensor` interface into more fitting ones.
+:book: A new use case! This is no longer a alarm system for only detecting hazards (smoke and fire), it should now also include security sensors such as _motion_ and _heat sensors_.
+
+:exclamation: **However, these new security sensors don't run on battery so one of the `Sensor` interface methods is suddenly redundant for a whole set of sensors.**
+
+:pencil2: Following the Interface Segregation Principle, we can start splitting the current `Sensor` interface into more fitting ones.
+
+```mermaid
+classDiagram
+    BatterySensor <|-- SmokeSensor
+    BatterySensor <|-- FireSensor
+
+    Sensor <|-- SmokeSensor
+    Sensor <|-- FireSensor
+    
+    Sensor <|-- MotionSensor
+    Sensor <|-- HeatSensor
+
+    class BatterySensor
+    <<interface>> BatterySensor
+    BatterySensor: +getBatteryPercentage() double
+
+    class Sensor
+    <<interface>> Sensor
+    Sensor: +isTriggered() bool
+    Sensor: +getLocation() String
+    Sensor: +getSensorType() String
+    
+    class SmokeSensor{
+      +isTriggered() bool
+      +getLocation() String
+      +getSensorType() String
+      +getBatteryPercentage() double
+    }
+    
+    class FireSensor{
+      +isTriggered() bool
+      +getLocation() String
+      +getSensorType() String
+      +getBatteryPercentage() double
+    }   
+
+    class MotionSensor{
+      +isTriggered() bool
+      +getLocation() String
+      +getSensorType() String
+    }
+    
+    class HeatSensor{
+      +isTriggered() bool
+      +getLocation() String
+      +getSensorType() String
+    }    
+```
+
+:pencil2: Create a new `BatterySensor` interface. Move the `getBatteryPercentage` method from the `Sensor` interface into this new interface.
+
+:pencil2: Make the `FireSensor` and `SmokeSensor` classes implement `BatterySensor` as well as `Sensor`.
 
 :pencil2: Create a new `MotionSensor` sensor, which inherits from the `Sensor` interface. These new security sensors should be polled separately from the hazard sensors. This requires a way to distinguish between the two sensor categories. Make changes to the `Sensor` interface to accomodate this.
 
@@ -19,18 +98,3 @@
 :pencil2: Create the `SecurityControlUnit` and extend `ControlUnit`
 :pencil2: Implement the time-check rule and poll the sensors.
 
-## 4.3 - Testing tips pt. 2
-
-:book: Another hard thing when testing is date and time. After all, it would be quite bad if our unit tests could only pass between 22:00-06:00 at night for the exercise above.
-
-:book: We solve this issue with the _[Adapter Design Pattern](https://en.wikipedia.org/wiki/Adapter_pattern)_
-
-:pencil2: Create an interface `LocalDateTimeAdapter` with a method `now()` (it's good practice to have Adapters match the original method signature exactly, and we want to wrap this Adapter around Java 8's `LocalDateTime.now()`).
-
-:pencil2: Create a default implementation of this interface `LocalDateTimeAdapterImpl` that only returns the original `LocalDateTime.now()`.
-
-:pencil2: Make sure the `SecurityControlUnit` only depends on the `LocalDateTimeAdapter` interface.
-
-:pencil2:. In your test you can now substitute your own fake implementation of the adapter interface and return any date and time you want, thus controlling your test.
-
-### [Go to exercise 4 :arrow_right:](../exercise-4/README.md)

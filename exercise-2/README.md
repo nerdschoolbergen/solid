@@ -30,7 +30,7 @@ classDiagram
     class App
 ```
 
-:pencil2: Take a look at the class diagram above showing the relationships between the different parts of the Alarmsystem application. (Dotted arrows denotes a dependency relation, full arrows denotes an inheritance relation (see [UML Class Diagrams Tutorial](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/))).
+:pencil2: Take a look at the class diagram above showing the relationships between the different parts of the Alarm System application. (Dotted arrows denotes a dependency relation, full arrows denotes an inheritance relation (see [UML Class Diagrams Tutorial](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/))).
 
 :pencil2: `ControlUnit` class currently knows which sensors (`FireSensor` and `SmokeSensor`) are registered in the system because they are `new`-ed up in the class (`new` means glue!). This adds a thight coupling between the `ControlUnit` and the Sensor classes.
 

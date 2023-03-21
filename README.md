@@ -28,9 +28,11 @@ This lesson will focus on writing code that touches upon the various aspects of 
 This repository contains a set of exercises organized in markdown files. Each exercise builds on the previous.
 
 - [Exercise 1 - Introduction](./exercise-1/README.md) (Start here)
-- [Exercise 2 - DIP](./exercise-2/README.md)
-- [Exercise 3 - SRP](./exercise-3/README.md)
-- [Exercise 4 - ISP](./exercise-4/README.md)
+- [Exercise 2 - Dependency Inversion Principle](./exercise-2/README.md)
+- [Exercise 3 - Single Responsibility Principle](./exercise-3/README.md)
+- [Exercise 4 - Interface Segregation Principle](./exercise-4/README.md)
+
+Tip: The markdown files are best viewed on [GitHub](https://github.com/nerdschoolbergen/solid) rather than on your computer.
 
 Have fun! And remember to ask an instructor if you're stuck.
 
