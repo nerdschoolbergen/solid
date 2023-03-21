@@ -67,7 +67,7 @@ classDiagram
 
 :pencil2: In the `App` class, a list of sensor implementations and pass them to the `ControlUnit` class constructor.
 
-:bulb: Example:
+:book: If you are completely stuck, here is an example:
 
 <details>
 
