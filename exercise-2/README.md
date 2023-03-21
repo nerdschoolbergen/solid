@@ -22,6 +22,8 @@ classDiagram
     class FireSensor
     class SmokeSensor
     class ControlUnit{
+      -List~Sensor~ : senors
+      +ControlUnit()
       +pollSensors()
     }
     class App
@@ -29,7 +31,7 @@ classDiagram
 
 :pencil2: Take a look at the class diagram above showing the relationships between the different parts of the Alarmsystem application. (Dotted arrows denotes a dependency relation, full arrows denotes an inheritance relation (see [UML Class Diagrams Tutorial](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/))).
 
-:pencil2: The `pollSensors` method on the `ControlUnit` class currently knows which sensors (`FireSensor` and `SmokeSensor`) are registered in the system. This adds a thight coupling between the `ControlUnit` and the Sensor classes.
+:pencil2: `ControlUnit` class currently knows which sensors (`FireSensor` and `SmokeSensor`) are registered in the system because they are `new`-ed up in the class (`new` means glue!). This adds a thight coupling between the `ControlUnit` and the Sensor classes.
 
 :pencil2: This thight coupling also violatetes the Open Closed Principle (OCP), because the `ControlUnit` class is not open for extension (eg. adding new types of sensors is not possible without changing the class).
 
