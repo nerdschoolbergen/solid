@@ -62,11 +62,15 @@ classDiagram
 
 :book: Notice that `ControlUnit` no longer has any relationship to `FireSensor` and `SmokeSensor`, only the `Sensor` interface. Instead, the `App` class now controls what sensors the `ControlUnit` polls via a new constructor.
 
-:pencil2: Create a new constructor for the `ControlUnit` class that takes a list of `Sensor`s as a parameter. Store the list of sensors as a private instance variable inside the class.
+:pencil2: Add a list of sensors as new constructor parameter to `ControlUnit`.
 
-:pencil2: Change the `pollSensors` method to loop over the new list of sensors. Remove the `new` statements.
+:pencil2: Replace the `new ArrayList` assignment in the constructor with the value of the new constructor parameter you added.
 
-:pencil2: In the `App` class, a list of sensor implementations and pass them to the `ControlUnit` class constructor.
+:pencil2: Remove the  `new` Sensor statements from the constructor.
+
+:pencil2: In the `App` class, create a list of sensor implementations (`FireSensor` and `SmokeSensor`) and pass them to the `ControlUnit` class constructor as a parameter.
+
+:pencil2: Run the application again to make sure it still works as before.
 
 :book: If you are completely stuck, here is an example:
 
@@ -77,18 +81,15 @@ classDiagram
 public class ControlUnit {
   private final List<Sensor> sensors;
 
+  // Add List<Sensor> sensors parameter here:
   public ControlUnit(List<Sensor> sensors) {
     this.sensors = sensors;
+    // Remove the following:
+    // this.sensors = new ArrayList<>();
+    // sensors.add(new FireSensor());
+    // sensors.add(new SmokeSensor());
   }
 
-  public List<Sensor> pollSensors() {
-    // Remove the following:
-    // List<Sensor> sensors = new ArrayList<>();
-    // sensors.add(new FireSensor());
-    // sensors.add(new SmokeSensor()); 
-    // 
-    // ...
-  }
   // ...
 }
 ```
@@ -97,10 +98,12 @@ public class ControlUnit {
 public class App {
 
   public static void main(String[] args) {
+    // Add list of sensors:
     List<Sensor> sensors = new ArrayList<>();
     sensors.add(new FireSensor());
     sensors.add(new SmokeSensor());
     
+    // Pass list of sensors to ControlUnit constructor as parameter:
     ControlUnit controlUnit = new ControlUnit(sensors);
     // ...
   }
