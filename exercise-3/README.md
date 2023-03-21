@@ -95,7 +95,8 @@ Still, we have business logic in our `ControlUnit` which is located closely to t
 
 :pencil2: Create an interface called `SensorPoller`. This interface should have a single method `pollSensors()`, which returns the sensors that are currently triggered.
 
-Example:
+:book: If you are stuck, here is an example:
+
 <details>
 
 ```java
@@ -111,6 +112,18 @@ public interface SensorPoller {
 </details>
 
 :pencil2: Create an implementation of `SensorPoller` called `FakeSensorPoller` (Since we are not dealing with real sensors). This should accept a list of sensors as parameter. Assign the sensors a private instance variable, and move the logic for handling alarm triggering to its `pollSensors()` method. This function should return the sensors from the injected sensors list that is triggered.
+
+:book: The implementation should look something like this (`ControlUnit`, sensor-related and viewer-related parts omitted):
+
+```mermaid
+classDiagram
+    SensorPoller <|-- FakeSensorPoller
+    
+    class FakeSensorPoller
+    class SensorPoller {
+      + pollSensors() List~Sensor~
+    }
+```
 
 :book: If you are stuck, here is an example:
 <details>
@@ -151,6 +164,40 @@ public class FakeSensorPoller implements SensorPoller {
 - Use our `SensorPoller` to poll sensors and get the triggering alarms.
 - Display triggering alarms by calling the `displayTriggeredSensors` on our `SensorViewer`.
 
+:book: After adding usage of `SensorPoller` to the `ControlUnit` class, the  result should look like this (including the `SensorViewer` parts):
+
+```mermaid
+classDiagram
+    FakeSensorPoller <|.. App
+    SensorPoller <|.. ControlUnit
+    SensorPoller <|-- FakeSensorPoller
+    ControlUnit <|.. App
+    SensorViewer <|.. ControlUnit
+    SensorViewer <|-- ConsoleSensorViewer
+    ConsoleSensorViewer <|.. App
+    
+    class ConsoleSensorViewer
+    class SensorViewer
+    <<interface>> SensorViewer
+    
+    class FakeSensorPoller
+    class SensorPoller {
+      + pollSensors() List~Sensor~
+    }
+    <<interface>> SensorPoller
+    class ControlUnit{
+      -SensorViewer : sensorViewer
+      -SensorPoller: sensorPoller
+      +ControlUnit(SensorViewer : sensorViewer, SensorPoller: sensorPoller)
+      +pollSensors()
+    }
+    class App
+```
+
+:book: If you are stuck, here is an example:
+
+<details>
+
 The `ControlUnit` class should look like this:
 
 ```java
@@ -174,19 +221,60 @@ public class ControlUnit {
 }
 ```
 
-## 3.4 - Revisiting coupling and cohesion in our updated code
+The `App` class should look like this:
+
+```java
+package nerdschool;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class App {
+
+  public static void main(String[] args) {
+
+    List<Sensor> sensors = new ArrayList<>();
+    sensors.add(new FireSensor());
+    sensors.add(new SmokeSensor());
+
+    SensorViewer sensorViewer = new ConsoleSensorViewer();
+    SensorPoller sensorPoller = new FakeSensorPoller(sensors);
+
+    ControlUnit controlUnit = new ControlUnit(sensorViewer, sensorPoller);
+
+    Scanner scanner = new Scanner(System.in);
+    String input = "";
+
+    while (!input.equals("exit")) {
+      System.out.println("Type \"poll\" to poll all sensors once or \"exit\" to exit");
+
+      input = scanner.nextLine();
+      if (input.equals("poll")) {
+        controlUnit.pollSensors();
+      }
+
+    }
+  }
+}
+```
+
+</details>
+
+## Summary
 
 ### Code cohesion
 
-In this exercise, we have split our application into separate concerns by applying the Single Responsiblity Principle and Dependency Inversion Principle.
-Our `ControlUnit` class has the responsiblity to orchestrate calling business logic module and passing its result to a UI module. It is oblivious to the business logic internals or how the UI is displayed. Changes to business logic or to the view logic, should not affect how these two parts of the application are connected.
+:book: In this exercise, we have split our application into separate concerns by applying the Single Responsiblity Principle and Dependency Inversion Principle.
 
-Our `SensorPoller` (implemented by `FakeSensorPoller`) does not know anything about anything other than executing sensor polling. E.g. changes to our sensors or adding sensor types does not affect how this module behaves.
+:book: Our `ControlUnit` class has the responsiblity to orchestrate calling business logic module (`SensorPoller`) and passing its result to a UI module (`SensorViewer`). It is oblivious to the business logic internals or how the UI is displayed. Changes to business logic or to the view logic, should not affect how these two parts of the application are connected.
 
-Our `SensorViewer` (implemented by `ConsoleSensorViewer`) does not know anything about anything other than displaying triggered sensors.
+:book: Our `SensorPoller` (implemented by `FakeSensorPoller`) does not know anything about anything other than executing sensor polling. E.g. changes to our sensors or adding sensor types does not affect how this module behaves.
+
+:book: Our `SensorViewer` (implemented by `ConsoleSensorViewer`) does not know anything about anything other than displaying triggered sensors.
 
 ### Code coupling
 
-Since we have injected interfaces and not implementations of our `SensorPoller` and `SensorViewer` into our `ControlUnit`, we are free to change these implementations as we like, without changing how they are run. For example, we could replace our `SensorPoller` implementation with a real implementation polling real sensors, and our `SensorViewer` with a GUI layer, as long as they adhere to the behaviour defined in their interfaces.
+:book: Since we have injected interfaces and not implementations of our `SensorPoller` and `SensorViewer` into our `ControlUnit`, we are free to change these implementations as we like, without changing how they are run. For example, we could replace our `SensorPoller` implementation with a real implementation polling real sensors, and our `SensorViewer` with a GUI layer, as long as they adhere to the behaviour defined in their interfaces.
 
 ### [Go to exercise 4 :arrow_right:](../exercise-4/README.md)
