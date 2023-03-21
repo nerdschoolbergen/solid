@@ -12,7 +12,7 @@ public class ControlUnit {
 
     List<Sensor> triggeredSensors = new ArrayList<>();
 
-    for (Sensor sensor : sensors) {
+    for (Sensor sensor : triggeredSensors) {
       if (sensor.isTriggered()) {
         triggeredSensors.add(sensor);
       }
