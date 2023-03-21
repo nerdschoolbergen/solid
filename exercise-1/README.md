@@ -113,6 +113,8 @@ classDiagram
 
 - Should raise an alarm every third time it is polled
 - Drains 10% battery between each poll
+- Battery level cannot go below 0
+- An alarm is never triggered if the battery level is 0
 
 :bulb: Hints on how to implement the sensor interface:
 <details>
@@ -161,10 +163,11 @@ public class NoobSensor implements Sensor {
 
 :pencil2: Implement the `SmokeSensor` methods.
 
-
 :exclamation: Requirements:
 
 - Should raise an alarm every second time it is polled
 - Drains 20% battery between each poll
+- Battery level cannot go below 0
+- An alarm is never triggered if the battery level is 0
 
 ### [Go to exercise 2 :arrow_right:](../exercise-2/README.md)

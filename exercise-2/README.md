@@ -1,4 +1,4 @@
-# 2.0 - Exercise 2 - Single Responsibility Principle (SRP) and Dependency Inversion Principle (DIP)
+# 2.0 - Exercise 2 - Dependency Inversion Principle (DIP)
 
 In this exercise we will look at how to apply the SOLID principles in code.
 
@@ -72,5 +72,7 @@ public class App {
 ```
 
 </details>
+
+:book: TODO - Add part about what we gain by injecting sensors into control class.
 
 ### [Go to exercise 3 :arrow_right:](../exercise-3/README.md)
