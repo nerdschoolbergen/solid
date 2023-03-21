@@ -1,0 +1,23 @@
+name: Java CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Build exercise project with Maven
+        working-directory: ./alarmsystem
+        run:
+          mvn --batch-mode --update-snapshots package
+      - name: Build solution project with Maven
+        working-directory: ./solution
+        run:
+          mvn --batch-mode --update-snapshots package

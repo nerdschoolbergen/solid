@@ -1,35 +1,45 @@
-# S.O.L.I.D
+# S.O.L.I.D. object oriented design principles
 
 Learn about the SOLID principles of object oriented design.
 
 ## [Open presentation slides](https://docs.google.com/presentation/d/1zZ4W12I0JJXXA-QkILAA9_C6-sXe_H7grZxCDqWaYgs/)
 
 ## Focus of this lesson
+
 This lesson will focus on writing code that touches upon the various aspects of the SOLID principles.
 
 ## What you need
+
 - IntelliJ Community Edition: [IntelliJ Community Edition](https://www.jetbrains.com/idea/download/)
-- Java dev kit: [Java SE Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+- Java dev kit (Java 17 or later): [Java SE Development Kit](https://docs.oracle.com/en/java/javase/19/install/overview-jdk-installation.html)
+- Alternative dev kit (Java 17 or later): [Eclipse Temurin Java Development Kit](https://adoptium.net/)
+
+## Prerequisites
+
+- Some previous experience with any object-oriented programming language is helpful
 
 ## How to get started
 
-* Start by cloning this repository into a folder on your computer. If you've never used git before, you can alternatively use the the "Download ZIP" button to the right.
-* Although you have this `README.md` file on your computer it's easier to read it on GitHub, so we recommend you keep this page open with the exercise tasks.
+- Start by cloning this repository into a folder on your computer. If you've never used git before, you can alternatively use the the "Download ZIP" button to the right.
+- Although you have this `README.md` file on your computer it's easier to read it on GitHub, so we recommend you keep this page open with the exercise tasks.
 
 ## Exercises
+
 This repository contains a set of exercises organized in markdown files. Each exercise builds on the previous.
 
-- [Exercises pt. 1](exercise1.md)
-- [Exercises pt. 2](exercise2.md)
-- [Exercises pt. 3](exercise3.md)
-- [Exercises pt. 4](exercise4.md)
+- [Exercise 1 - Introduction](./exercise-1/README.md) (Start here)
+- [Exercise 2 - Dependency Inversion Principle](./exercise-2/README.md)
+- [Exercise 3 - Single Responsibility Principle](./exercise-3/README.md)
+- [Exercise 4 - Interface Segregation Principle](./exercise-4/README.md)
+
+Tip: The markdown files are best viewed on [GitHub](https://github.com/nerdschoolbergen/solid) rather than on your computer.
+
+Have fun! And remember to ask an instructor if you're stuck.
 
 ## Helpful resources
+
 - [SOLID (object-oriented design) on Wikipedia](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design))
-- [SOLID motivational posters](https://uppalaayush.wordpress.com/2015/09/14/solid-object-oriented-design-principles-summed-up-in-memes/)
-- [IntelliJ video tutorials](https://www.jetbrains.com/idea/documentation/)
-- [IntelliJ for Eclipse users](https://www.jetbrains.com/help/idea/2016.3/eclipse.html)
-- [IntelliJ testing](https://www.jetbrains.com/help/idea/2016.3/testing.html)
+- [IntelliJ documentation](https://www.jetbrains.com/idea/documentation/)
 
 ### Symbols and notation used in exercises
 
