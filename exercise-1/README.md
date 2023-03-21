@@ -27,7 +27,7 @@ Requirements:
 
 ### 1.2.3 Existing code
 
-**Interfaces**
+#### Interfaces
 
 - `Sensor`. This interface defines methods for all sensors to implement.
 	- `isTriggered()`: returns true/false for whether the sensor is triggered or not. Different sensors has different rules. See exercises.
@@ -35,12 +35,16 @@ Requirements:
 	- `getSensortype()`: returns a textual description of the sensor type such as "Fire sensor" or "Smoke sensor".
 	- `getBatteryPercentage()`: Returns a number between 0-100 where 0 is empty and 100 is fully charged.
 
-**Classes**
+#### Classes
 
 - `FireSensor`. This sensor implements the `Sensor` interface but has no logic yet.
 - `SmokeSensor`. This sensor implements the `Sensor` interface but has no logic yet.
 - `ControlUnit`. This is the starting point for the alarmsystem. It's the main entry point for polling sensors and controlling the system.
 - `App` - Entrypoint for the application (where `main` method is located). Calls `pollSensors()` method in `ControlUnit` class.
+
+#### Class diagram
+
+Dotted arrows denotes a dependency relation, full arrows denotes an inheritance relation (see [UML Class Diagrams Tutorial](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/)).
 
 ```mermaid
 ---
@@ -92,18 +96,6 @@ classDiagram
 :pencil2: To interact with the application, click on the terminal window in the `Run` window at the bottom of the screen.
 
 :pencil2: Stop the app by pressing the red square button at the top right of the screen or press <kbd>CTRL</kbd> + <kbd>F2</kbd> (Windows) or <kbd>⌘ Command</kbd> + <kbd>F2</kbd> (macOS).
-
-### 1.2.5 - :star: Optional - Unit tests
-
-:exclamation: If you are not comfortable writing unit tests, you can safely skip this part.
-
-:book: There are some initial unit tests in place: `FireSensorTest.java` and `SmokeSensorTest.java`. These are just dummy implementations to verify our starting template works out of the box as expected.
-
-:book: When you work on your code you should keep the tests green, and that obviously means you will need to change them as you go along.
-
-:book: Remember to change the test names (method names) so they reflect what the test is doing as you go along as well.
-
-:book: The tests are just placeholders. Write better ones as you go along and remove the placeholder ones.
 
 ## 1.3 - `FireSensor`
 
