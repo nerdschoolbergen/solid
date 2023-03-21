@@ -4,7 +4,8 @@ In this exercise we will look at how to apply the Dependency Inversion Principle
 
 The Dependency Inversion Principle (DIP) states:
 
-> Entities must depend on abstractions, not on concretions. It states that the high-level module must not depend on the low-level module, but they should depend on abstractions.
+> A. High-level modules should not import anything from low-level modules. Both should depend on abstractions (e.g., interfaces).
+> B. Abstractions should not depend on details. Details (concrete implementations) should depend on abstractions.
 
 ## 2.1 - Dependency Inversion Principle (DIP)
 
@@ -32,7 +33,7 @@ classDiagram
 
 :pencil2: This thight coupling also violatetes the Open Closed Principle (OCP), because the `ControlUnit` class is not open for extension (eg. adding new types of sensors is not possible without changing the class).
 
-:bulb: We want to apply the _Dependency Inversion Principle (DIP)_ in order to make the `ControlUnit` oblivious to which type of sensor it administers.
+:bulb: We want to apply the _Dependency Inversion Principle (DIP)_ in order to make the `ControlUnit` oblivious to which type of sensor it administers, thereby decoupling it from the sensors.
 
 :book: When we introduce this kind of [loose coupling](https://en.wikipedia.org/wiki/Loose_coupling), the `ControlUnit` class is not prone to change as the Sensor class changes. E.g. we can add new sensor types without changing the `ControlUnit` class. As long as the different types of sensors adhere to the interface of how a sensor should behave. The ControlUnit class no longer has a direct dependency to the different sensor types, instead it only knows the behaviour of a sensor.
 
@@ -110,8 +111,8 @@ public class App {
 
 ### Summary
 
-- The `ControlUnit` class violates the Dependency Inversion Principle.
-- By introducting constructor injection the `ControlUnit` now depends on an abstraction (the `Sensor` interface) instead of concretions (`FireSensor` and `SmokeSensor`), thereby adhering to the Dependency Inversion Principle.
+- The `ControlUnit` class violates the Dependency Inversion Principle, because the "high-level module" `ControlUnit` depends on the "low-level modules" `FireSensor` and `SmokeSensor`.
+- By introducting constructor injection the module `ControlUnit` now depends on an abstraction (the `Sensor` interface) instead of contrete implementations (`FireSensor` and `SmokeSensor`), thereby adhering to the Dependency Inversion Principle.
 - By making the `ControlUnit` not depend directly on sensors the `ControlUnit` now is also adhering to the Open Closed Principle, because we can add new Sensors to poll without changing the `ControlUnit` class.
 
 ### [Go to exercise 3 :arrow_right:](../exercise-3/README.md)
