@@ -67,7 +67,7 @@ classDiagram
 
 :pencil2: Add a list of sensors as new constructor parameter to `ControlUnit`.
 
-:pencil2: Replace the `new ArrayList` assignment in the constructor with the value of the new constructor parameter you added.
+:pencil2: Replace the `new ArrayList` assignment of the `sensors` instance variable in the constructor with the value of the new constructor parameter you added.
 
 :pencil2: Remove the  `new` Sensor statements from the constructor.
 
