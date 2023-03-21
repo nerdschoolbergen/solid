@@ -15,6 +15,7 @@ classDiagram
     Sensor <|-- SmokeSensor
     FireSensor <.. ControlUnit
     SmokeSensor <.. ControlUnit
+    Sensor <.. ControlUnit
     ControlUnit <|-- App
     
     class Sensor
