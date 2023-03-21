@@ -2,6 +2,8 @@
 
 ## 4.1 - Adding motion and heat sensors
 
+:book: A new use case! This is no longer a alarm system for only detecting hazards (smoke and fire), it should now also include security sensors such as _motion_ and _heat sensors_:
+
 ```mermaid
 classDiagram
     Sensor <|-- MotionSensor
@@ -29,16 +31,14 @@ classDiagram
     }    
 ```
 
-:book: A new use case! This is no longer a alarm system for only detecting hazards (smoke and fire), it should now also include security sensors such as _motion_ and _heat sensors_.
-
 :exclamation: **However, these new security sensors don't run on battery so one of the `Sensor` interface methods is suddenly redundant for a whole set of sensors.**
 
 :pencil2: Following the Interface Segregation Principle, we can start splitting the current `Sensor` interface into more fitting ones.
 
 ```mermaid
 classDiagram
-    BatterySensor <|-- SmokeSensor
-    BatterySensor <|-- FireSensor
+    BatteryDrivenSensor <|-- SmokeSensor
+    BatteryDrivenSensor <|-- FireSensor
 
     Sensor <|-- SmokeSensor
     Sensor <|-- FireSensor
@@ -46,9 +46,9 @@ classDiagram
     Sensor <|-- MotionSensor
     Sensor <|-- HeatSensor
 
-    class BatterySensor
-    <<interface>> BatterySensor
-    BatterySensor: +getBatteryPercentage() double
+    class BatteryDrivenSensor
+    <<interface>> BatteryDrivenSensor
+    BatteryDrivenSensor: +getBatteryPercentage() double
 
     class Sensor
     <<interface>> Sensor
@@ -83,9 +83,9 @@ classDiagram
     }    
 ```
 
-:pencil2: Create a new `BatterySensor` interface. Move the `getBatteryPercentage` method from the `Sensor` interface into this new interface.
+:pencil2: Create a new `BatteryDrivenSensor` interface. Move the `getBatteryPercentage` method from the `Sensor` interface into this new interface.
 
-:pencil2: Make the `FireSensor` and `SmokeSensor` classes implement `BatterySensor` as well as `Sensor`.
+:pencil2: Make the `FireSensor` and `SmokeSensor` classes implement `BatteryDrivenSensor` as well as `Sensor`.
 
 :pencil2: Create a new `MotionSensor` sensor, which inherits from the `Sensor` interface. These new security sensors should be polled separately from the hazard sensors. This requires a way to distinguish between the two sensor categories. Make changes to the `Sensor` interface to accomodate this.
 
@@ -97,4 +97,3 @@ classDiagram
 
 :pencil2: Create the `SecurityControlUnit` and extend `ControlUnit`
 :pencil2: Implement the time-check rule and poll the sensors.
-

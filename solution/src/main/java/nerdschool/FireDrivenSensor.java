@@ -1,12 +1,16 @@
 package nerdschool;
 
-public class FireSensor implements Sensor {
+public class FireDrivenSensor implements Sensor, BatteryDrivenSensor {
 
   private static final int triggerFrequency = 3;
   private int nrOfIsTriggeredCalls = 0;
   private int batteryPercentage = 100;
 
   public boolean isTriggered() {
+    if(batteryPercentage == 0) {
+      return false;
+    }
+
     batteryPercentage -= 10;
 
     nrOfIsTriggeredCalls++;
@@ -19,6 +23,10 @@ public class FireSensor implements Sensor {
 
   public String getSensorType() {
     return "Fire";
+  }
+
+  public SensorCategory getSensorCategory() {
+    return SensorCategory.Hazard;
   }
 
   public double getBatteryPercentage() {

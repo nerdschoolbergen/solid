@@ -11,7 +11,7 @@ public class ConsoleSensorViewer implements SensorViewer {
 
     for (Sensor sensor : sensors) {
       System.out.printf(
-          "A %s sensor was triggered at %s%n", sensor.getSensorType(), sensor.getLocation());
+          "A %s sensor of category %s was triggered at %s%n", sensor.getSensorType(), sensor.getSensorCategory().toString(), sensor.getLocation());
     }
   }
 }

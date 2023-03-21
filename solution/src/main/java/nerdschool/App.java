@@ -7,10 +7,11 @@ import java.util.Scanner;
 public class App {
 
   public static void main(String[] args) {
-
     List<Sensor> sensors = new ArrayList<>();
-    sensors.add(new FireSensor());
-    sensors.add(new SmokeSensor());
+    sensors.add(new FireDrivenSensor());
+    sensors.add(new SmokeDrivenSensor());
+    sensors.add(new HeatSensor());
+    sensors.add(new MotionSensor());
 
     SensorViewer sensorViewer = new ConsoleSensorViewer();
     SensorPoller sensorPoller = new FakeSensorPoller(sensors);

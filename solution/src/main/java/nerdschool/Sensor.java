@@ -8,5 +8,5 @@ public interface Sensor {
 
   String getSensorType();
 
-  double getBatteryPercentage();
+  SensorCategory getSensorCategory();
 }
