@@ -38,8 +38,8 @@ Requirements:
 
 #### Classes
 
-- `FireSensor`. This sensor implements the `Sensor` interface but has no logic yet.
-- `SmokeSensor`. This sensor implements the `Sensor` interface but has no logic yet.
+- `FireSensor`. This sensor implements the `Sensor` interface, but has no logic yet.
+- `SmokeSensor`. This sensor implements the `Sensor` interface, but has no logic yet.
 - `ControlUnit`. This is the starting point for the alarmsystem. It's the main entry point for polling sensors and controlling the system.
 - `App` - Entrypoint for the application (where `main` method is located). Calls `pollSensors()` method in `ControlUnit` class.
 
