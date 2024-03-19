@@ -18,7 +18,7 @@ Requirements:
 > **Before you begin**: Please make sure that you have the following installed:
 
 - IntelliJ Community Edition: [IntelliJ Community Edition](https://www.jetbrains.com/idea/download/)
-- Java dev kit (Java 17 or later): [Java SE Development Kit](https://docs.oracle.com/en/java/javase/19/install/overview-jdk-installation.html)
+- JDK Development Kit (Java 17 or later): [Java SE Development Kit](https://www.oracle.com/java/technologies/downloads/)
 - Alternative dev kit (Java 17 or later): [Eclipse Temurin Java Development Kit](https://adoptium.net/)
 
 1. :pencil2: Start by cloning this repository into a folder on your computer. If you've never used git before, you can alternatively use the the green "Code" button to the top right, and then select "Download zip". Unzip the downloaded zip file (make sure to remember where you put it).
