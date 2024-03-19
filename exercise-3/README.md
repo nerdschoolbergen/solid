@@ -209,8 +209,8 @@ public class ControlUnit {
   private final SensorViewer sensorViewer;
   private final SensorPoller sensorPoller;
 
-  public ControlUnit(SensorViewer statusWriter, SensorPoller sensorPoller) {
-    this.sensorViewer = statusWriter;
+  public ControlUnit(SensorViewer statusViewer, SensorPoller sensorPoller) {
+    this.sensorViewer = statusViewer;
     this.sensorPoller = sensorPoller;
   }
 
