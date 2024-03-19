@@ -2,7 +2,7 @@
 
 Learn about the SOLID principles of object oriented design.
 
-## [Open presentation slides](https://docs.google.com/presentation/d/1zZ4W12I0JJXXA-QkILAA9_C6-sXe_H7grZxCDqWaYgs/)
+## [Open presentation slides](https://docs.google.com/presentation/d/1BJy5pEQvM_G4ilvFAK0CJVBC3rZnN_0PIeRrnYN-gaw/)
 
 ## Focus of this lesson
 
