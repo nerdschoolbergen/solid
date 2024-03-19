@@ -9,7 +9,7 @@ Requirements:
 - The system should support any number of sensors
 - The system should support different types of sensors (fire, smoke, gas, etc)
 - The system should poll all sensors to see if any are triggered (an alarm is raised)
-- The system should also check for the battery percentage of the sensors (different types of sensors draines faster)
+- The system should also check for the battery percentage of the sensors (different types of sensors drains faster)
 
 > Important! The goal of these exercises is to work on code with the SOLID principles in mind. Try to evaluate your choices as you go and keep the principles in mind.
 
