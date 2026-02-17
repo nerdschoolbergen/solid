@@ -1,8 +1,8 @@
-# S.O.L.I.D. object oriented design principles
+# Mastering Clean Code: Essential Object-Oriented Design Principles
 
 Learn about the SOLID principles of object oriented design.
 
-## [Open presentation slides](https://docs.google.com/presentation/d/14LWDzxuFAnm__UMZbURaL4Zcy2bYr1ikUDfmeksn3Ss/edit?usp=sharing)
+## [Open presentation slides](https://docs.google.com/presentation/d/17ft7PByoXVPeNVf7qnXGDga1sYzigGz69ivP8xl2f80/edit?usp=sharing)
 
 ## Focus of this lesson
 
