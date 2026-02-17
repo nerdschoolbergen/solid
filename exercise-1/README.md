@@ -115,7 +115,7 @@ classDiagram
 - Add instance variables for all the get methods
 - Add a separate backing field for tracking number of polls
 - Increment this number each time the isTriggered method is called
-- To implement the trigger logic, use the modulo operator in combination with the tigger count field
+- To implement the trigger logic, use the modulo operator in combination with the trigger count field
 
 </details>
 

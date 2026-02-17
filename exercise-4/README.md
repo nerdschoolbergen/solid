@@ -96,4 +96,5 @@ classDiagram
 :question: Which SOLID principle are we _maintaining/not breaking_ by doing this?
 
 :pencil2: Create the `SecurityControlUnit` and extend `ControlUnit`
+
 :pencil2: Implement the time-check rule and poll the sensors.
